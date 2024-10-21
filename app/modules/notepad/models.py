@@ -6,7 +6,7 @@ class Notepad(db.Model):
     title = db.Column(db.String(256), nullable=False)
     body = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-
+    
     user = db.relationship('User', backref='notepads', lazy=True)
 
     def __repr__(self):
